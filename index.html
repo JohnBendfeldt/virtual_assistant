@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+	    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	    <title>Virtual Assistant</title>
+	    <link rel='stylesheet' type='text/css' href='css/style.css'>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="javascript/jquery.timepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
+
+        <script type="text/javascript" src="javascript/bootstrap-datepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
+
+        <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
+        <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
+    </head>
+    <body>
+        <article>
+            <div class="selectTime">
+                <h2>Select the Time</h2>
+                <p><input id="scrollingTime" type="text" class="time" /></p>
+            </div>
+            <script>
+                $(function() {
+                    $('#scrollingTime').timepicker({ 'scrollDefault': 'now' });
+                });
+            </script>
+
+        </article>
+
+        <article>
+            <div class="datePairClass">
+                <h2>DatePair</h2>
+                <p id="datepair">
+                    <input type="text" class="date start" />
+                    <input type="text" class="time start" /> to
+                    <input type="text" class="time end" />
+                    <input type="text" class="date end" />
+                </p>
+            </div>
+            <script>
+                $('#datepair .time').timepicker({
+                    'showDuration': true,
+                    'timeFormat': 'g:ia'
+                });
+
+                $('#datepair .date').datepicker({
+                    'format': 'm/d/yyyy',
+                    'autoclose': true
+                });
+
+                $('#datepair').datepair();
+            </script>
+
+        </article>
+    </body>
+</html>
